@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .upload-wrap {
+      position: relative;
+    }
+
+    #uploadI {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .wrap img {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" contenteditable="true" style="background: pink">
+    <img class="currentImg" id="currentImg" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg3.mukewang.com%2F5c8f43a30001671d05000433.jpg&amp;refer=http%3A%2F%2Fimg3.mukewang.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1632472339&amp;t=94111e1e5be72dfd479c05356b01069f" width="500" height="433" />
+  </div>
+  <div class="upload-wrap">
+    <button id="upload">上传图片</button>
+    <input type="file" accept="image/*" id="uploadI">
+  </div>
+  <button onclick="getValue()">获取value</button>
+</body>
+
+</html>
+
+<script>
+  const a = document.getElementsByClassName("wrap")[0]
+
+  let input = document.getElementById("uploadI");
+  input.addEventListener('change', (e) => {
+    console.log(3333, e.target.files[0]);
+    const f = e.target.files[0]
+    var reads = new FileReader();
+    reads.readAsDataURL(f);
+    reads.onload = function (e) {
+      createImg(this.result);
+    };
+  })
+
+
+  const createImg = (src) => {
+    const dom = document.createElement("img")
+    dom.src = src
+    a.appendChild(dom)
+  }
+
+
+  function getValue() {
+    console.log(a.innerHTML);
+  }
+</script>
