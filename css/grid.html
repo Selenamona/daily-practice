@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      height: 100%;
+    }
+
+    .item3 {
+      grid-column: auto / span 2;
+    }
+
+    .grid-container {
+      width: 300px;
+      height: 200px;
+      display: grid;
+      /* 规定网格布局中的列数（和宽度） */
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+      grid-gap: 10px;
+      background-color: #2196F3;
+      padding: 10px;
+      /* 放置顺序 */
+      grid-auto-flow: row dense;
+    }
+
+    .grid-container>div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="item1">1</div>
+    <div class="item2">2</div>
+    <div class="item3">3</div>
+    <div class="item4">4</div>
+  </div>
+
+
+</body>
+
+</html>
