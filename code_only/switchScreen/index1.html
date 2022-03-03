@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面A</title>
+</head>
+
+<body>
+   <script>
+    // 监听浏览器窗口的切换-浏览器自带API-visibilitychange 属性
+    document.addEventListener("visibilitychange", function() {
+      console.log(document.visibilityState);
+      if (document.visibilityState == 'hidden') {
+        document.title = '别看页面B了，看我';
+      } else if (document.visibilityState == 'visible') {
+        document.title = '页面A';
+      }
+    });
+
+    // 监听窗口是否焦点状态
+    window.onfocus = function() {
+      document.title = '页面A';
+
+    };
+    window.onblur = function() {
+      console.log('请注意，你切屏了！');
+    };
+  </script>
+</body>
+
+</html>

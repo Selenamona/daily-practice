@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面B</title>
+</head>
+
+<body>
+   <script>
+    document.addEventListener("visibilitychange", function() {
+      console.log(document.visibilityState);
+      if (document.visibilityState == 'hidden') {
+        document.title = '别看页面A了，看我';
+      } else if (document.visibilityState == 'visible') {
+        document.title = '页面B';
+      }
+    });
+
+
+    // 计算离开时间
+    let n = 0;
+    let isFirst = true;
+    window.onfocus = function() {
+      if (!isFirst) {
+        console.log(`请注意，你切屏了！总共离开${n}秒`);
+        isFirst = true;
+        n = 0;
+      }
+      document.title = '页面B';
+    };
+    window.onblur = function() {
+      isFirst = false;
+      setInterval(function() {
+        n++;
+      }, 1000)
+    };
+  </script>
+</body>
+
+</html>
