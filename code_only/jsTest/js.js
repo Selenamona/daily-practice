@@ -4,14 +4,14 @@
 // 	// <!-- 截取和清空数组 -->
 
 // 	var arr = [12, 222, 44, 88];
-// 	// arr.length = 2;  
-// 	// console.log(arr)  //截取，arr = [12, 222];  
-//     // arr.length = 0;  
+// 	// arr.length = 2;
+// 	// console.log(arr)  //截取，arr = [12, 222];
+//     // arr.length = 0;
 //     // console.log(arr)  //清空，arr will be equal to [].
 //     arr[arr.length] = 6;   //插
 //     // console.log(arr)
 
-//     // 获取数组的最大最小值	
+//     // 获取数组的最大最小值
 //     var numbers = [5, 45822, 120, -215];
 //     var maxInNumbers = Math.max.apply(Math, numbers);   //45822
 //     var minInNumbers = Math.min.apply(Math, numbers);   //-215
@@ -61,25 +61,22 @@
 //         }, {
 //         num: 3,
 //         text: 'num4'
-//     }];   
+//     }];
 //     arr.sort(function(a, b) {
 //         // return a.num - b.num;   //从小到大排
 //         return b.num - a.num;   //从大到小排
 //     });
 //     // console.log(arr)
 
-
-
 //     // console.log(([][[]]+[])[+!![]]+([]+{})[!+[]+!![]])    //]
-
 
 //     //Q&&A    下面的代码会在 console 输出神马？
 
 //     (function(){
 //     var a = b = 3;
 //     })();
-    
-//     // console.log("a defined? " + (typeof a !== 'undefined')); 
+
+//     // console.log("a defined? " + (typeof a !== 'undefined'));
 //     // console.log("b defined? " + (typeof b !== 'undefined'));
 
 //     var foo = { n: 1 };
@@ -102,7 +99,7 @@
 //             }
 //         };
 //     }
-//     var a = fun(0); a.fun(1); a.fun(2); a.fun(3); 
+//     var a = fun(0); a.fun(1); a.fun(2); a.fun(3);
 //     var b = fun(0).fun(1).fun(2).fun(3);
 //     var c = fun(0).fun(1); c.fun(2); c.fun(3);
 
@@ -134,22 +131,17 @@
 //     //     console.log('Hello World!');
 //     // }
 
-
-
-
-
-
-// // 写一个函数，接收一个数字，输出这个数字里面所有相邻数相加等于这个数字的，例如  
+// // 写一个函数，接收一个数字，输出这个数字里面所有相邻数相加等于这个数字的，例如
 // // 15=1+2+3+4+5
 // // 15=4+5+6
 // // 15=8+7
 // // 有时间大家开动一下脑筋
 
 // // 16 = 7+9
-// // 16 = 
+// // 16 =
 
 //     // function fn(n){
-        
+
 //     // }
 
 //     // fn(15)
@@ -176,12 +168,11 @@
 //     return a+b;
 // })
 
-
 // -----------算法测试 start-----------------
 // excel 列对应的字母： 例如1-A 26-Z 702-ZZ
 // var convertToTitle = function(n) {
 //     var arr = [];
-//     var res = ""; 
+//     var res = "";
 //     let letters = "ZABCDEFGHIJKLMNOPQRSTUVWXY"
 //     while(n>0){
 //         arr.push(n%26);
@@ -209,20 +200,20 @@
 //         let idx = column % 26 === 0 ? 25 : (column % 26  - 1);
 //         return aaa(Math.floor(column / 26)) + arr[idx];
 //     }
-// }  
+// }
 // console.log(aaa(703));
 
 // var convertToTitle = function(n) {
 //     var arr = [];
-//     var res = ""; 
-//     let letters = "ZABCDEFGHIJKLMNOPQRSTUVWXY" 
-//     let letters2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+//     var res = "";
+//     let letters = "ZABCDEFGHIJKLMNOPQRSTUVWXY"
+//     let letters2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 //     while (n>0) {
 //         if(n<26){
 //             arr.push(letters[n%26]);
 //             n = 0;
 //         }else{
-//             arr.push(letters[(n-1)%26]); 
+//             arr.push(letters[(n-1)%26]);
 //             n = Math.floor((n)/26);
 //         }
 //     }
@@ -230,40 +221,68 @@
 //     arr.reverse();
 //     for (let i = 0; i < arr.length; i++) {
 //         res += arr[i];
-//     } 
+//     }
 //     console.log(res);
 // };
 // convertToTitle(53);
 
-var lengthOfLongestSubstring = function(s) {
-    var startIndex = 0;
-    var maxLength = 1;
-    var maxLengthLs = 1;
-    var str = "";
-    for(var i=1; i<s.length; i++){
-        var ls = true;
-        for (let j = 0; j < str.length; j++) {
-           if(s[i]==str[j]){
-               ls = false;
-           }
-        } 
-        if(!ls){
-            console.log(1+"eeee"); 
-            maxLengthLs = i-1-startIndex;
-            startIndex = i;
-        } else {
-            console.log(2+"eeee"); 
-            str = s.substr(startIndex,i+1)
-            maxLengthLs = i - startIndex;
-        }
-        if(maxLengthLs > maxLength){
-            maxLength = maxLengthLs;
-        }    
-    } 
-    console.log(maxLength);
+var lengthOfLongestSubstring = function (s) {
+  var startIndex = 0;
+  var maxLength = 1;
+  var maxLengthLs = 1;
+  var str = "";
+  for (var i = 1; i < s.length; i++) {
+    var ls = true;
+    for (let j = 0; j < str.length; j++) {
+      if (s[i] == str[j]) {
+        ls = false;
+      }
+    }
+    if (!ls) {
+      console.log(1 + "eeee");
+      maxLengthLs = i - 1 - startIndex;
+      startIndex = i;
+    } else {
+      console.log(2 + "eeee");
+      str = s.substr(startIndex, i + 1);
+      maxLengthLs = i - startIndex;
+    }
+    if (maxLengthLs > maxLength) {
+      maxLength = maxLengthLs;
+    }
+  }
+  console.log(maxLength);
 };
-lengthOfLongestSubstring("abcabcbb");
-
-
+// lengthOfLongestSubstring("abcabcbb");
 
 // // -----------算法测试 end-----------------
+
+// try{
+//   a(
+// } catch (e) {
+//   console.log('error', e)
+// }
+// // output
+// // Uncaught SyntaxError: Unexpected token }
+
+// function d() {
+//   a.b;
+// }
+// try {
+//   d();
+// } catch (e) {
+//   console.log("error", e);
+// }
+// output
+// error ReferenceError: a is not defined
+
+try {
+  function d() {
+    a.b;
+  }
+} catch (e) {
+  console.log("error", e);
+}
+d();
+// output
+// error ReferenceError: a is not defined
