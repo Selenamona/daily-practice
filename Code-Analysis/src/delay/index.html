@@ -20,4 +20,14 @@
 
 <script>
   console.log(1234)
+  
+  const a = function() {
+    console.log(arguments)
+  };
+  var isHasL = function(l) {
+    this.length = l || 5;
+    this[2] = "第三个元素"
+  };
+  a.apply(null, new isHasL());
+  // a.apply(null, new isHasL(2));
 </script>

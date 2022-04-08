@@ -7,7 +7,7 @@ console.log(__dirname, "__dirname");
 module.exports = {
   // 入口文件
   entry: {
-    app: path.resolve(__dirname, "/src/test1/main.js"),
+    app: path.resolve(__dirname, "/src/delay/main.js"),
     quickLru: path.resolve(__dirname, "src/quick-lru/main.js")
   },
   output: {
@@ -19,7 +19,7 @@ module.exports = {
   plugins: [
     // new CleanWebpackPlugin(), // 清除之前打包文件
     new HtmlWebpakPlugin({
-      template: path.resolve(__dirname, "/src/test1/index.html"),
+      template: path.resolve(__dirname, "/src/delay/index.html"),
       filename: "aaa.html",
       chunks: ["app"] // 与入口文件对应的文件名
     }),

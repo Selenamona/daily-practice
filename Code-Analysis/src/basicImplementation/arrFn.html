@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  // this - 调用者
+  // arguments - 参数 
+
+  // unshift 实现
+  Array.prototype.myUnshift = function() {
+    const ls = [...arguments, ...this]
+    for (let i = 0; i < ls.length; i++) {
+      this[i] = ls[i]
+    }
+    return this.length
+  }
+  const arr = [1, 2, 3]
+  console.log(arr.myUnshift(4, 5, 6)); // 返回新数组长度
+  console.log(arr); // 愿数组被修改
+</script>
