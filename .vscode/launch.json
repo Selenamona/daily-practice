@@ -1,18 +1,12 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "启动程序",
-            "program": "${file}",
-            "cwd": "${workspaceRoot}"
-        },
-        {
-            "type": "node",
-            "request": "attach",
-            "name": "附加到进程",
-            "port": 5858
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "启动程序",
+      "program": "${file}",
+      "cwd": "${workspaceRoot}"
+    }
+  ]
 }
